@@ -1,9 +1,24 @@
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <%=link_to 'ドクターエクステリア', root_path, class:"navbar-brand" %>
+
+
+            <% if user_signed_in? %>
+      <li><%= link_to "#{current_user.first_name}さん、こんにちは", "#", class: "user-nickname" %></li>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, method: :get, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, method: :get, class: "sign-up" %></li>
+      <% end %>
+
+      
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
+        
       </button>
+
+
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -22,13 +37,8 @@
             <%= link_to "ブログ", blogs_path, class:"nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "質問コーナー", faqs_path, class:"nav-link dropdown-toggle" %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
-              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-              <a class="dropdown-item" href="faq.html">FAQ</a>
-              <a class="dropdown-item" href="404.html">404</a>
-              <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+            <%= link_to "質問コーナー", faqs_path, class:"nav-link" %>
+
             </div>
           </li>
         </ul>

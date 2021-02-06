@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :blogs, only: [:index, :new, :create]
   
-  resources :faqs, only: :index
+  resources :faqs, only: [:index, :new, :create]
   resources :items, only: :index
   resources :companies, only: :index
 end

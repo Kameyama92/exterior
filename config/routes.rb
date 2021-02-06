@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :guides, only: :index
   resources :contacts, only: :index
 
-  resources :blogs, only: :index
+  resources :blogs, only: [:index, :new, :create]
   
   resources :faqs, only: :index
   resources :items, only: :index

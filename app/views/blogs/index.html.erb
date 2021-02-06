@@ -17,6 +17,16 @@
 
     <!-- Blog Post -->
     <div class="card mb-4">
+
+  <% @blogs.each do |blog| %>
+   
+      <p><%= blog.b_title %></p>
+      <span class="name">
+        <%= blog.b_title %>
+      </span>
+    </div>
+
+
       <div class="card-body">
         <div class="row">
           <div class="col-lg-6">
@@ -25,7 +35,7 @@
             </a>
           </div>
           <div class="col-lg-6">
-            <h2 class="card-title">Post Title</h2>
+            <h2 class="card-title"> <%= blog.b_title %></h2>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
             <a href="#" class="btn btn-primary">Read More &rarr;</a>
           </div>
@@ -36,6 +46,7 @@
         <a href="#">Start Bootstrap</a>
       </div>
     </div>
+  <% end %>
 
     <!-- Blog Post -->
     <div class="card mb-4">

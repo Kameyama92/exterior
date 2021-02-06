@@ -1,9 +1,5 @@
-.f_title {
-  height: 40px;
-}
 
-
-.purchase-btn-text {
+.f_btn {
 
   font-size: 18px;
   text-decoration: none;
@@ -26,4 +22,3 @@
 
   width: 60%;
 }
-
